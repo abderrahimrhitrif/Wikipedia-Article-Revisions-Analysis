@@ -42,10 +42,14 @@ pip install requests pandas matplotlib wordcloud
 ### 1. Number of Wikipedia Artificial Intelligence Article Revisions Over Time
 
 This line plot shows the number of revisions made to Wikipedia articles in the "Artificial Intelligence" category over time. It provides insights into how active the editing has been for this category.
+![image](https://github.com/user-attachments/assets/2683e35c-9c9b-4917-b692-224322e201fc)
+
 
 ### 2. Distribution of Wikipedia Artificial Intelligence Article Revisions Over Time
 
 This histogram illustrates the distribution of revision timestamps. It helps in understanding the frequency of revisions and any noticeable patterns in the activity levels.
+![image](https://github.com/user-attachments/assets/74fd336c-4f3b-47e2-8e51-47a19511d32b)
+
 
 ## License
 
