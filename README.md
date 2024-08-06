@@ -27,7 +27,8 @@ pip install requests pandas matplotlib wordcloud
 2. **Visualizing Revisions**
 
    Open and run `visualize.ipynb` in Jupyter Notebook or JupyterLab. This script will read the `articles.csv` file, process the revision timestamps, and generate the following charts:
-   
+
+   - **Word Cloud of Wikipedia Artificial Intelligence Articles**: A word cloud of most common terms in extracts of articles.
    - **Number of Wikipedia Artificial Intelligence Article Revisions Over Time**: A time series plot showing the number of revisions per day.
    - **Distribution of Wikipedia Artificial Intelligence Article Revisions Over Time**: A histogram showing the distribution of revisions over time.
 
@@ -39,13 +40,19 @@ pip install requests pandas matplotlib wordcloud
 
 ## Charts
 
-### 1. Number of Wikipedia Artificial Intelligence Article Revisions Over Time
+### 1. Word Cloud of Wikipedia Artificial Intelligence Articles
+
+This word cloud displays the most common terms from Wikipedia extracts of articles on "Artificial Intelligence." It visually highlights key concepts and frequently discussed topics, offering a quick overview of the main themes in the articles.
+![image](https://github.com/user-attachments/assets/64b2e867-07e7-489e-9097-e086b36b7c59)
+
+
+### 2. Number of Wikipedia Artificial Intelligence Article Revisions Over Time
 
 This line plot shows the number of revisions made to Wikipedia articles in the "Artificial Intelligence" category over time. It provides insights into how active the editing has been for this category.
 ![image](https://github.com/user-attachments/assets/2683e35c-9c9b-4917-b692-224322e201fc)
 
 
-### 2. Distribution of Wikipedia Artificial Intelligence Article Revisions Over Time
+### 3. Distribution of Wikipedia Artificial Intelligence Article Revisions Over Time
 
 This histogram illustrates the distribution of revision timestamps. It helps in understanding the frequency of revisions and any noticeable patterns in the activity levels.
 ![image](https://github.com/user-attachments/assets/74fd336c-4f3b-47e2-8e51-47a19511d32b)
