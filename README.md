@@ -1,69 +1,35 @@
 # Wikipedia Article Revisions Analysis
 
 ## Overview
+A data engineering and analytics project that queries the MediaWiki API to fetch Wikipedia articles and revision history, storing them for temporal distribution analysis and word cloud text visualization.
 
-This project consists of two main scripts:
-1. **wikidata.py**: Fetches articles from the "Artificial Intelligence" category on Wikipedia, retrieves details for each article, and saves the information to a CSV file.
-2. **visualize.ipynb**: Analyzes and visualizes the revision history of the articles using charts.
+## Architecture & Pipeline
+1. **API Ingestion (`wikidata.py`)**: Queries the MediaWiki API (`api.php`) for category members and fetches article text, extracts, and revision timestamps (`rvlimit: max`).
+2. **Data Persistence**: Exports collected article data and revisions to CSV (`articles.csv`).
+3. **Visual Analytics (`visualize.ipynb`)**: Parses revision timestamps, generates word clouds from article extracts, and plots temporal revision trends.
 
-## Installation
+## Data
+- **Source**: MediaWiki API (`en.wikipedia.org/w/api.php`) extracting artificial intelligence article categories and revision timestamps.
 
-To run this project, you need to have Python installed along with the necessary libraries. You can install the required libraries using pip:
+## Method & Algorithms
+- **API Scraping & Pagination**: Handles MediaWiki continuation parameters (`cmcontinue`) to paginate through category members and revision histories.
+- **Time-Series EDA**: Parses ISO timestamps into datetime objects and aggregates revisions by date.
 
+## Verified Results & Metrics
+- Successfully queried Wikipedia category members, extracted article text extracts and revision histories, and generated word clouds and temporal distribution plots.
+
+## Limitations & Caveats
+- Relies on live MediaWiki API availability and category membership stability.
+
+## Run Instructions
 ```bash
-pip install requests pandas matplotlib wordcloud
+python wikidata.py
+jupyter notebook visualize.ipynb
 ```
 
-## Usage
+## CV Bullet Points
+- Built a data collection and analysis pipeline querying the MediaWiki API for article extracts and revision history timestamps.
+- Processed temporal time-series data to visualize Wikipedia revision frequency distributions and generated text word clouds using Python.
 
-1. **Fetching Article Data**
-
-   Run `wikidata.py` to fetch articles from the "Artificial Intelligence" category and save the details to `articles.csv`. This file will include the title, URL, extract, and revision timestamps of each article.
-
-   ```bash
-   python wikidata.py
-   ```
-
-2. **Visualizing Revisions**
-
-   Open and run `visualize.ipynb` in Jupyter Notebook or JupyterLab. This script will read the `articles.csv` file, process the revision timestamps, and generate the following charts:
-
-   - **Word Cloud of Wikipedia Artificial Intelligence Articles**: A word cloud of most common terms in extracts of articles.
-   - **Number of Wikipedia Artificial Intelligence Article Revisions Over Time**: A time series plot showing the number of revisions per day.
-   - **Distribution of Wikipedia Artificial Intelligence Article Revisions Over Time**: A histogram showing the distribution of revisions over time.
-
-   To open `visualize.ipynb`, navigate to the directory containing the file and run:
-
-   ```bash
-   jupyter notebook visualize.ipynb
-   ```
-
-## Charts
-
-### 1. Word Cloud of Wikipedia Artificial Intelligence Articles
-
-This word cloud displays the most common terms from Wikipedia extracts of articles on "Artificial Intelligence." It visually highlights key concepts and frequently discussed topics, offering a quick overview of the main themes in the articles.
-![image](https://github.com/user-attachments/assets/64b2e867-07e7-489e-9097-e086b36b7c59)
-
-
-### 2. Number of Wikipedia Artificial Intelligence Article Revisions Over Time
-
-This line plot shows the number of revisions made to Wikipedia articles in the "Artificial Intelligence" category over time. It provides insights into how active the editing has been for this category.
-![image](https://github.com/user-attachments/assets/2683e35c-9c9b-4917-b692-224322e201fc)
-
-
-### 3. Distribution of Wikipedia Artificial Intelligence Article Revisions Over Time
-
-This histogram illustrates the distribution of revision timestamps. It helps in understanding the frequency of revisions and any noticeable patterns in the activity levels.
-![image](https://github.com/user-attachments/assets/74fd336c-4f3b-47e2-8e51-47a19511d32b)
-
-
-## License
-
-This project is licensed under the MIT License.
-
-## Acknowledgements
-
-- Wikipedia API for providing article data.
-- Python libraries `requests`, `pandas`, `matplotlib`, and `wordcloud` for data processing and visualization.
-
+## Claims to Avoid
+- Do not claim large-scale web scraping infrastructure beyond standard API client scripts.
