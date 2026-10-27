@@ -26,10 +26,3 @@ A data engineering and analytics project that queries the MediaWiki API to fetch
 python wikidata.py
 jupyter notebook visualize.ipynb
 ```
-
-## CV Bullet Points
-- Built a data collection and analysis pipeline querying the MediaWiki API for article extracts and revision history timestamps.
-- Processed temporal time-series data to visualize Wikipedia revision frequency distributions and generated text word clouds using Python.
-
-## Claims to Avoid
-- Do not claim large-scale web scraping infrastructure beyond standard API client scripts.
